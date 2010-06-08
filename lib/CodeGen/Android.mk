@@ -1,3 +1,6 @@
+# Only use this on the device or emulator.
+ifneq ($(TARGET_ARCH),arm)
+
 LOCAL_PATH:= $(call my-dir)
 
 # For the host only
@@ -6,7 +9,7 @@ include $(CLEAR_VARS)
 include $(CLEAR_TBLGEN_VARS)
 
 TBLGEN_TABLES :=    \
-    DiagnosticCommonKinds.inc 
+    DiagnosticCommonKinds.inc
 
 clang_codegen_SRC_FILES :=	\
 	CGBlocks.cpp	\
@@ -48,3 +51,5 @@ include $(CLANG_HOST_BUILD_MK)
 include $(CLANG_TBLGEN_RULES_MK)
 include $(LLVM_GEN_INTRINSICS_MK)
 include $(BUILD_HOST_STATIC_LIBRARY)
+
+endif

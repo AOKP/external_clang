@@ -1,3 +1,6 @@
+# Only use this on the device or emulator.
+ifneq ($(TARGET_ARCH),arm)
+
 LOCAL_PATH:= $(call my-dir)
 
 # For the host only
@@ -7,7 +10,7 @@ include $(CLEAR_TBLGEN_VARS)
 
 TBLGEN_TABLES :=    \
 	DiagnosticASTKinds.inc	\
-    DiagnosticCommonKinds.inc 
+    DiagnosticCommonKinds.inc
 
 clang_ast_SRC_FILES :=	\
 	APValue.cpp	\
@@ -54,3 +57,5 @@ LOCAL_MODULE:= libclangAST
 include $(CLANG_HOST_BUILD_MK)
 include $(CLANG_TBLGEN_RULES_MK)
 include $(BUILD_HOST_STATIC_LIBRARY)
+
+endif

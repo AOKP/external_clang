@@ -1,3 +1,6 @@
+# Only use this on the device or emulator.
+ifneq ($(TARGET_ARCH),arm)
+
 ###########################################################
 ## TableGen: Compile .td files to .inc.
 ###########################################################
@@ -37,5 +40,6 @@ $(intermediates)/clang/Driver/CC1Options.inc: $(CLANG_ROOT_PATH)/include/clang/D
 	$(call transform-host-td-to-out,opt-parser-defs)
 endif
 
+endif
 
 endif

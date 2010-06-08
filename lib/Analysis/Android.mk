@@ -1,3 +1,6 @@
+# Only use this on the device or emulator.
+ifneq ($(TARGET_ARCH),arm)
+
 LOCAL_PATH:= $(call my-dir)
 
 # For the host only
@@ -16,7 +19,7 @@ clang_analysis_SRC_FILES :=	\
 	PrintfFormatString.cpp	\
 	ReachableCode.cpp	\
 	UninitializedValues.cpp
-	
+
 
 LOCAL_SRC_FILES := $(clang_analysis_SRC_FILES)
 
@@ -25,3 +28,5 @@ LOCAL_MODULE:= libclangAnalysis
 include $(CLANG_HOST_BUILD_MK)
 include $(CLANG_TBLGEN_RULES_MK)
 include $(BUILD_HOST_STATIC_LIBRARY)
+
+endif
