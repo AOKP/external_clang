@@ -1,6 +1,3 @@
-# Only use this on the device or emulator.
-ifeq ($(TARGET_ARCH),arm)
-
 LOCAL_PATH:= $(call my-dir)
 
 # For the host only
@@ -57,5 +54,3 @@ LOCAL_MODULE:= libclangAST
 include $(CLANG_HOST_BUILD_MK)
 include $(CLANG_TBLGEN_RULES_MK)
 include $(BUILD_HOST_STATIC_LIBRARY)
-
-endif

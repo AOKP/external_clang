@@ -1,6 +1,3 @@
-# Only use this on the device or emulator.
-ifeq ($(TARGET_ARCH),arm)
-
 LOCAL_CFLAGS :=	\
 	-pedantic	\
 	-Wcast-qual	\
@@ -14,6 +11,4 @@ LOCAL_C_INCLUDES :=	\
 
 ifneq ($(LLVM_HOST_BUILD_MK),)
 include $(LLVM_HOST_BUILD_MK)
-endif
-
 endif

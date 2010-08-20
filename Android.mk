@@ -1,6 +1,3 @@
-# Only use this on the device or emulator.
-ifeq ($(TARGET_ARCH),arm)
-
 LOCAL_PATH := $(call my-dir)
 CLANG_ROOT_PATH := $(LOCAL_PATH)
 
@@ -20,5 +17,3 @@ subdirs := $(addprefix $(LOCAL_PATH)/,$(addsuffix /Android.mk, \
 include $(LOCAL_PATH)/clang.mk
 
 include $(subdirs)
-
-endif

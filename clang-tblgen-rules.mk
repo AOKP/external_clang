@@ -1,6 +1,3 @@
-# Only use this on the device or emulator.
-ifeq ($(TARGET_ARCH),arm)
-
 ###########################################################
 ## TableGen: Compile .td files to .inc.
 ###########################################################
@@ -38,8 +35,6 @@ LOCAL_GENERATED_SOURCES += $(intermediates)/clang/Driver/CC1Options.inc
 $(intermediates)/clang/Driver/CC1Options.inc: $(CLANG_ROOT_PATH)/include/clang/Driver/CC1Options.td $(CLANG_ROOT_PATH)/include/clang/Driver/OptParser.td $(TBLGEN)
 	@echo "Building Clang CC1 Option tables with tblgen"
 	$(call transform-host-td-to-out,opt-parser-defs)
-endif
-
 endif
 
 endif
