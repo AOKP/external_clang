@@ -5,6 +5,8 @@ LOCAL_PATH:= $(call my-dir)
 include $(CLEAR_VARS)
 include $(CLEAR_TBLGEN_VARS)
 
+LOCAL_CFLAGS := -fno-strict-aliasing
+
 TBLGEN_TABLES :=    \
 	AttrList.inc	\
 	Attrs.inc	\

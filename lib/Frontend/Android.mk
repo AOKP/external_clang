@@ -44,6 +44,7 @@ clang_frontend_SRC_FILES := \
   VerifyDiagnosticConsumer.cpp
 
 LOCAL_SRC_FILES := $(clang_frontend_SRC_FILES)
+LOCAL_CFLAGS := -fno-strict-aliasing
 
 LOCAL_MODULE:= libclangFrontend
 LOCAL_MODULE_TAGS:= optional

@@ -58,6 +58,8 @@ clang_codegen_SRC_FILES :=	\
 
 LOCAL_SRC_FILES := $(clang_codegen_SRC_FILES)
 
+LOCAL_CFLAGS := -fno-strict-aliasing
+
 LOCAL_MODULE:= libclangCodeGen
 
 LOCAL_MODULE_TAGS := optional

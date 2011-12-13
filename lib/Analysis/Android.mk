@@ -31,6 +31,7 @@ clang_analysis_SRC_FILES :=	\
 
 
 LOCAL_SRC_FILES := $(clang_analysis_SRC_FILES)
+LOCAL_CFLAGS := -fno-strict-aliasing
 
 LOCAL_MODULE:= libclangAnalysis
 LOCAL_MODULE_TAGS := optional
