@@ -573,7 +573,7 @@ static void addFPUArgs(const Driver &D, const Arg *A, const ArgList &Args,
     CmdArgs.push_back("-vfp3");
     CmdArgs.push_back("-target-feature");
     CmdArgs.push_back("-neon");
-  } else if (FPU == "vfp3-d16" || FPU == "vfpv3-d16") {
+  } else if (FPU == "vfp3-d16" || FPU == "vfpv3-d16" || FPU == "vfp4-d16" || FPU == "vfpv4-d16") {
     CmdArgs.push_back("-target-feature");
     CmdArgs.push_back("+vfp3");
     CmdArgs.push_back("-target-feature");
@@ -585,11 +585,16 @@ static void addFPUArgs(const Driver &D, const Arg *A, const ArgList &Args,
     CmdArgs.push_back("+vfp2");
     CmdArgs.push_back("-target-feature");
     CmdArgs.push_back("-neon");
-  } else if (FPU == "vfp3" || FPU == "vfpv3") {
+  } else if (FPU == "vfp3" || FPU == "vfpv3" || FPU == "vfp4" || FPU == "vfpv4") {
     CmdArgs.push_back("-target-feature");
     CmdArgs.push_back("+vfp3");
     CmdArgs.push_back("-target-feature");
     CmdArgs.push_back("-neon");
+  } else if (FPU == "neon-vfp3" || FPU == "neon-vfp4" || FPU == "neon-vfpv3" || FPU == "neon-vfpv4") {
+    CmdArgs.push_back("-target-feature");
+    CmdArgs.push_back("+vfp3");
+    CmdArgs.push_back("-target-feature");
+    CmdArgs.push_back("+neon");
   } else if (FPU == "fp-armv8") {
     CmdArgs.push_back("-target-feature");
     CmdArgs.push_back("+v8fp");
